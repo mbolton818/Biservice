@@ -13,5 +13,11 @@
   <body>
   测试服务
   $END$
+
+  <form action="/hello.do" method="post">
+    hello:<input value="text" name="userName"/>
+      <input type="submit" value="提交"/>
+
+  </form>
   </body>
 </html>

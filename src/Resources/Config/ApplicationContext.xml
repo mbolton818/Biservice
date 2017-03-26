@@ -14,4 +14,13 @@
         <constructor-arg value="构造"></constructor-arg>
 
     </bean>
+
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dcosbi127"></property>
+    </bean>
+
+    <bean id="dcosbi127" class="com.alibaba.druid.pool.DruidDataSource">
+
+    </bean>
 </beans>
