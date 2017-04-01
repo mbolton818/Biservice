@@ -29,6 +29,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:Config/ApplicationContext.xml</param-value>
+        <param-value>classpath:Config/DatasourceMysql.xml</param-value>
     </context-param>
 
 
