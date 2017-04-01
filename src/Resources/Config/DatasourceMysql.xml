@@ -20,7 +20,7 @@
         <property name="password"   value="${db.password}"/>
     </bean>
 
-<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="properties" ref="dbProps"/>
     </bean>-->
 </beans>
