@@ -2,25 +2,46 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
 
     <util:map id="dbProps">
-        <entry key="db.driver" value="com.mysql.jdbc.Driver"/>
-        <entry key="db.jdbcurl"  value="jdbc:mysql://localhost/bi"/>
-        <entry key="db.username" value="root"/>
-        <entry key="db.password" value="root"/>
+        <entry key="jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        <entry key="jdbc.url"  value="jdbc:mysql://localhost/bi"/>
+        <entry key="jdbc.username" value="root"/>
+        <entry key="jdbc.password" value="root"/>
     </util:map>
 
-    <!--datasource-->
-
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName"    value="${db.driver}"/>
-        <property name="url"    value="${db.jdbcurl}"/>
-        <property name="username"   value="${db.username}"/>
-        <property name="password"   value="${db.password}"/>
+    <!--配置属性文件-->
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:Config/config.properties</value>
+            </list>
+        </property>
     </bean>
 
-    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <bean id="PropertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="configProperties"/>
+    </bean>
+
+    <!--datasource-->
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="properties" ref="dbProps"/>
+        <property name="location" value="classpath:Config/config.properties"/>
     </bean>-->
+
+
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"    value="${jdbc.driver}"/>
+        <property name="url"    value="${jdbc.url}"/>
+        <property name="username"   value="${jdbc.username}"/>
+        <property name="password"   value="${jdbc.password}"/>
+    </bean>
+
+    <bean id="dcosbi127" class="com.alibaba.druid.pool.DruidDataSource">
+
+    </bean>
+
 </beans>
