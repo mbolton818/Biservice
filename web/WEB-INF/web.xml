@@ -8,17 +8,22 @@
     <servlet>
         <servlet-name>BI</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-        <!--可选配置 自定义servlet.xml配置文件的位置和名称-->
+
+        <!--可选配置 自定义servlet.xml配置文件的位置和名称,默认在web-inf目录下面-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:Config/bi-servlet.xml</param-value>
         </init-param>
+
+        <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>BI</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
+
+
 
     <!-- Spring 配置 -->
     <listener>
@@ -28,7 +33,7 @@
     <!-- 指定Spring Bean的配置文件所在目录。默认配置在WEB-INF目录下 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:Config/ApplicationContext.xml,classpath:Config/DatasourceMysql.xml</param-value>
+        <param-value>classpath:Config/ApplicationContext.xml,classpath:Config/DatasourceMysql.xml</param-value>;
     </context-param>
 
 

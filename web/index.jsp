@@ -12,10 +12,10 @@
   </head>
   <body>
   测试服务
-  $END$
+  $End$
 
-  <form action="/hello.do" method="post">
-    hello:<input value="text" name="userName"/>
+  <form action="/listuser.do" method="post">
+    hello:<input type="text" value="sunqi" name="userName"/>
       <input type="submit" value="提交"/>
 
   </form>

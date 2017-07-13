@@ -1,7 +1,7 @@
-package com.tony.workimpl;
+package svr.tony.workimpl;
 
-import com.tony.runImpl.Irunimpl;
-import com.tony.work.Iwork;
+import svr.tony.runImpl.Irunimpl;
+import svr.tony.work.Iwork;
 
 /**
  * Created by Tony on 2017/3/4.

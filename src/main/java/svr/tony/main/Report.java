@@ -1,11 +1,11 @@
-package com.tony.main;
+package svr.tony.main;
 
-import com.tony.dataserver.Iconn;
-import com.tony.workimpl.IworkRegOfDayimpl;
-import com.tony.workimpl.Iworkimpl;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import svr.tony.dataserver.Iconn;
+import svr.tony.workimpl.IworkRegOfDayimpl;
+import svr.tony.workimpl.Iworkimpl;
 
 /**
  * Created by Tony on 2017/3/4.
@@ -34,6 +34,12 @@ public class Report {
 //            Iworkimpl s3 = ctx.getBean(Iworkimpl.class);
 
             s3.WriteSql();
+
+
+
+
+
+
         }
 
 
